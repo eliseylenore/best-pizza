@@ -1,12 +1,18 @@
 //back-end logic
-function Pizza(size, toppings) {
-  this.size = size,
+function Pizza(sizeChoice, toppings) {
+  this.sizeChoice = sizeChoice,
   this.toppings = toppings
 }
 
 
 
 //front-end logic
-$("form#sizes").submit(function(event) {
-  event.preventDefault();
+$(document).ready(function() {
+  var chosenPizza = new Pizza("",[]);
+
+  $("form#size-selection").submit(function(event) {
+    event.preventDefault();
+    chosenPizza.sizeChoice = $("input:radio[name=size]:checked").val();
+    console.log(chosenPizza.sizeChoice);
+  });
 });
