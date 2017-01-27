@@ -1,0 +1,19 @@
+/******
+General Styling
+*****/
+
+.top {
+  background-color: lightblue;
+  padding: 30px;
+}
+
+.top h3 {
+  float: left;
+  margin-left: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.spaceholder {
+  height: 100px;
+}
