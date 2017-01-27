@@ -14,5 +14,7 @@ $(document).ready(function() {
     event.preventDefault();
     chosenPizza.sizeChoice = $("input:radio[name=size]:checked").val();
     console.log(chosenPizza.sizeChoice);
+    $("#sizes").hide();
+    $("#toppings").show();
   });
 });
