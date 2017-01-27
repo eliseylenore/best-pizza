@@ -18,3 +18,7 @@ General Styling
 .spaceholder {
   height: 100px;
 }
+
+#sizes {
+  display: none;
+}

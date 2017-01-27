@@ -17,27 +17,49 @@
         </div><!--end spaceholder-->
         <div class="col-sm-1"><!--left space-->
         </div><!--end left space-->
-        <div class="col-sm-10"><!--sizes-->
+        <div id="sizes" class="col-sm-10"><!--sizes-->
           <h2>1. Choose a size</h2>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size">
-              Small
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size">
-              Medium
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size">
-              Large
-            </label>
-          </div>
+          <form id="size-selection">
+            <div class="radio">
+              <label>
+                <input type="radio" name="size">
+                Small
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size">
+                Medium
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size">
+                Large
+              </label>
+            </div><!--end radio buttons-->
+            <button class="btn btn-success btn-lg" type="submit">Next</button>
+          </form>
         </div><!--end sizes-->
+        <div id="toppings" class="col-sm-10"><!--toppings-->
+          <h2>2. Choose your toppings</h2>
+          <form id="toppings-selection">
+            <div class="form-group">
+              <h4>Meats</h4>
+              <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+              <input type="checkbox" name="toppings" value="sausage">Sausage<br>
+              <input type="checkbox" name="toppings" value="chicken">Grilled chicken<br>
+              <input type="checkbox" name="toppings" value="italian">Italian Sausage<br>
+              <h4>Veggies</h4>
+              <input type="checkbox" name="toppings" value="onion">Red Onion<br>
+              <input type="checkbox" name="toppings" value="green onions">Green Onions<br>
+              <input type="checkbox" name="toppings" value="mushrooms">Mushrooms<br>
+              <input type="checkbox" name="toppings" value="pineapple">Pineapple<br>
+              <input type="checkbox" name="toppings" value="pepper">Green Pepper<br>
+            </div><!--end form-group-->
+            <button class="btn btn-success btn-lg" type="submit">Next</button>
+          </form>
+        </div><!--end toppings-->
         <div class="col-sm-1"><!--right space-->
         </div><!--end right space-->
       </div><!--end body of order page-->
