@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     //make toppings a string, separated by comma
     chosenPizza.toppings = chosenPizza.toppings.join(", ");
-    console.log(chosenPizza.toppings);
+    $("#size-result").text(chosenPizza.sizeChoice);
   });
 
 
