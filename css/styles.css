@@ -19,7 +19,7 @@ General Styling
   height: 100px;
 }
 
-#toppings, #results-container {
+#toppings, #results-container, .add-pizza-btn {
   display: none;
 }
 
@@ -30,4 +30,9 @@ Results Styling
 
 #results h3, form {
   margin-left: 2em;
+}
+
+.add-pizza {
+  margin: 2em 2em 0;
+
 }

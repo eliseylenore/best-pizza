@@ -45,7 +45,7 @@ $(document).ready(function() {
 
     //hide toppings, bring up results page
     $("#toppings").hide();
-    $("#results-container").show();
+    $("#results-container, .add-pizza-btn").show();
 
     //show size and toppings on results page
     $("#results").append("<h3>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<h3>with "+ chosenPizza.toppings.join(", ") + ".</h3>" + "<h3>Your price: $" + chosenPizza.price());
