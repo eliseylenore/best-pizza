@@ -6,7 +6,6 @@ function Pizza(sizeChoice, toppings) {
 
 Pizza.prototype.price = function() {
   var price = 4;
-  debugger;
   if (this.sizeChoice === "medium") {
   price += .99;
   } else if (this.sizeChoice === "large") {
@@ -14,12 +13,13 @@ Pizza.prototype.price = function() {
   }
 
 
-  // if (this.toppings.length < 5) {
-  //   price += 3;
-  // } else if (this.toppings.length < 3) {
-  //   price += 2;
-  // }
-  console.log(this.sizeChoice);
+  if (this.toppings.length >= 5) {
+    price += 3.25;
+  } else if (this.toppings.length >= 3) {
+    price += 2.15;
+  }
+
+  console.log(this.toppings.length);
   return price;
 }
 
