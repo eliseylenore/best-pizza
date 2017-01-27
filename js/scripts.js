@@ -53,8 +53,14 @@ $(document).ready(function() {
 
     //make toppings a string, separated by comma
     chosenPizza.toppings = chosenPizza.toppings.join(", ");
+
+    //show size and toppings on results page
     $("#size-result").text(chosenPizza.sizeChoice);
     $("#toppings-result").text(chosenPizza.toppings);
+
+    //show price of selected pizza
+    $("#price-result").text(priceOfChosenPizza);
+
   });
 
 
