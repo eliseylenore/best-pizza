@@ -28,11 +28,16 @@ General Styling
 Results Styling
 *****/
 
-#results h3, form {
+form {
   margin-left: 2em;
 }
 
 .add-pizza {
   margin: 2em 2em 0;
+}
 
+ol {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 1.5em;
 }

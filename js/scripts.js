@@ -34,24 +34,25 @@ $(document).ready(function() {
     chosenPizza.sizeChoice = $("input:radio[name=size]:checked").val();
     $("#sizes").hide();
     $("#toppings").show();
-  });
+  });//end submission event for size selection
 
   //choose toppings, add to chosenPizza, calculate and show price
   $("form#toppings-selection").submit(function(event) {
     event.preventDefault();
     $("input:checkbox[name=toppings]:checked").each(function() {
       chosenPizza.toppings.push($(this).val());
-    });//end submission event for size selection
+    });//end .each loop for checked toppings
 
     //hide toppings, bring up results page
     $("#toppings").hide();
     $("#results-container, .add-pizza-btn").show();
 
     //show size and toppings on results page
-    $("#results").append("<h3>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<h3>with "+ chosenPizza.toppings.join(", ") + ".</h3>" + "<h3>Your price: $" + chosenPizza.price());
+    $("#results").append("<li><p>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<p>with "+ chosenPizza.toppings.join(", ") + ".</p>" + "<p>Your price: $<span class='individual-price'>" + chosenPizza.price() + "</span></p>");
   });//end submission event for toppings selection
 
   $(".add-pizza-btn").click(function() {
-
+    $("#results-container, .add-pizza-btn").hide();
+    $("#sizes").show();
   });//end click function for pizza button
 });//end document ready
