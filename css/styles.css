@@ -19,7 +19,7 @@ General Styling
   height: 100px;
 }
 
-#sizes, #toppings {
+#toppings, #results {
   display: none;
 }
 
@@ -28,6 +28,6 @@ General Styling
 Results Styling
 *****/
 
-#results h3 {
+#results h3, form {
   margin-left: 2em;
 }
