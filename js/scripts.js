@@ -3,7 +3,7 @@ function Pizza(sizeChoice, toppings) {
   this.sizeChoice = sizeChoice,
   this.toppings = toppings
 }
-  var chosenPizza = new Pizza("",[]);
+  var chosenPizza = new Pizza("", []);
 
 
 //front-end logic
@@ -19,7 +19,9 @@ $(document).ready(function() {
 
   $("form#toppings-selection").submit(function(event) {
     event.preventDefault();
-    chosenPizza.toppings = $("input:checkbox[name=toppings]:checked").val();
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      chosenPizza.toppings.push($(this).val());
+    });
     console.log(chosenPizza.toppings);
     $("#toppings").hide();
     $("#results").show();
