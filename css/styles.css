@@ -3,8 +3,9 @@ General Styling
 *****/
 
 .top {
-  background-color: lightblue;
+  background-color: #4c934c;
   padding: 30px;
+  color: white;
 }
 
 .top h3 {
