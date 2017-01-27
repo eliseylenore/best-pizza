@@ -24,6 +24,8 @@ Pizza.prototype.price = function() {
 
 //create a new Pizza!
 var chosenPizza = new Pizza("", []);
+//create prices array to access when calculate total price
+var totalPrice=0;
 
 //front-end logic
 $(document).ready(function() {
@@ -47,8 +49,15 @@ $(document).ready(function() {
     $("#toppings").hide();
     $("#results-container, .add-pizza-btn").show();
 
+    //calculate total price by looping through existing pizzas
+    totalPrice +=  chosenPizza.price();
+
     //show size and toppings on results page
-    $("#results").append("<li><p>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<p>with "+ chosenPizza.toppings.join(", ") + ".</p>" + "<p>Your price: $<span class='individual-price'>" + chosenPizza.price() + "</span></p>");
+    $("#results").append("<li><p>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<p>with "+ chosenPizza.toppings.join(", ") + ".</p>" + "<p>Your price: $<span class='individual-price'>" + chosenPizza.price() + "</span></p></li>");
+    //show total price on results page
+    $("#total-price").text("Total price: $" + totalPrice);
+
+
   });//end submission event for toppings selection
 
   $(".add-pizza-btn").click(function() {

@@ -36,6 +36,10 @@ form {
   margin: 2em 2em 0;
 }
 
+.add-pizza-btn {
+  margin: 2em 3em 0;
+}
+
 ol {
   padding-top: 2em;
   padding-bottom: 2em;
