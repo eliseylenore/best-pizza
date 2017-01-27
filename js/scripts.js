@@ -41,7 +41,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("input:checkbox[name=toppings]:checked").each(function() {
       chosenPizza.toppings.push($(this).val());
-    });
+    });//end submission event for size selection
 
     //hide toppings, bring up results page
     $("#toppings").hide();
@@ -49,10 +49,9 @@ $(document).ready(function() {
 
     //show size and toppings on results page
     $("#results").append("<h3>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<h3>with "+ chosenPizza.toppings.join(", ") + ".</h3>" + "<h3>Your price: $" + chosenPizza.price());
+  });//end submission event for toppings selection
 
+  $(".add-pizza-btn").click(function() {
 
-
-  });
-
-
-});
+  });//end click function for pizza button
+});//end document ready
