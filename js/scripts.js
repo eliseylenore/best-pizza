@@ -7,3 +7,6 @@ function Pizza(size, toppings) {
 
 
 //front-end logic
+$("form#sizes").submit(function(event) {
+  event.preventDefault();
+});
