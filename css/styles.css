@@ -19,6 +19,15 @@ General Styling
   height: 100px;
 }
 
-#sizes {
+#sizes, #toppings {
   display: none;
+}
+
+
+/******
+Results Styling
+*****/
+
+#results h3 {
+  margin-left: 2em;
 }
