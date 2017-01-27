@@ -2,14 +2,14 @@
 function Pizza(sizeChoice, toppings) {
   this.sizeChoice = sizeChoice,
   this.toppings = toppings
-}; //should there be a semi-colon here?
+} //should there be a semi-colon here?
 
 Pizza.prototype.price = function() {
   var price = 4;
   if (this.sizeChoice === "medium") {
-  price += .99;
-  } else if (this.sizeChoice === "large") {
   price += 1.99;
+  } else if (this.sizeChoice === "large") {
+  price += 2.99;
   }
 
 
@@ -19,7 +19,6 @@ Pizza.prototype.price = function() {
     price += 2.15;
   }
 
-  console.log(this.toppings.length);
   return price;
 }
 
@@ -37,7 +36,7 @@ $(document).ready(function() {
     $("#toppings").show();
   });
 
-  //choose toppings, add to chosenPizza
+  //choose toppings, add to chosenPizza, calculate and show price
   $("form#toppings-selection").submit(function(event) {
     event.preventDefault();
     $("input:checkbox[name=toppings]:checked").each(function() {
@@ -46,14 +45,11 @@ $(document).ready(function() {
 
     //hide toppings, bring up results page
     $("#toppings").hide();
-    $("#results").show();
-
-    //show price of selected pizza
-    $("#price-result").text(chosenPizza.price());
+    $("#results-container").show();
 
     //show size and toppings on results page
-    $("#size-result").text(chosenPizza.sizeChoice);
-    $("#toppings-result").text(chosenPizza.toppings.join(", "));
+    $("#results").append("<h3>A " + chosenPizza.sizeChoice + " pizza</h3>" + "<h3>with "+ chosenPizza.toppings.join(", ") + ".</h3>" + "<h3>Your price: $" + chosenPizza.price());
+
 
 
   });

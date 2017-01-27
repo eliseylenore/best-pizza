@@ -19,7 +19,7 @@ General Styling
   height: 100px;
 }
 
-#toppings, #results {
+#toppings, #results-container {
   display: none;
 }
 
