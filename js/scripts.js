@@ -2,6 +2,24 @@
 function Pizza(sizeChoice, toppings) {
   this.sizeChoice = sizeChoice,
   this.toppings = toppings
+}; //should there be a semi-colon here?
+
+function calculatePrice(sizeChoice, toppings) {
+  var price = 4;
+
+  if (sizeChoice === "medium") {
+  price += .99;
+  } else if (sizeChoice === "large") {
+  price += .99;
+  }
+
+  if (toppings.length < 5) {
+    price += 3;
+  } else if (toppings.length < 3) {
+    price += 2;
+  }
+
+  return price;
 }
 
 //create a new Pizza!
@@ -28,6 +46,10 @@ $(document).ready(function() {
     //hide toppings, bring up results page
     $("#toppings").hide();
     $("#results").show();
+
+    //calculate price
+    var priceOfChosenPizza = calculatePrice(chosenPizza.sizeChoice, chosenPizza.toppings);
+    console.log(priceOfChosenPizza);
 
     //make toppings a string, separated by comma
     chosenPizza.toppings = chosenPizza.toppings.join(", ");
