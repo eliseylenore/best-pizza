@@ -4,12 +4,11 @@ function Pizza(sizeChoice, toppings) {
   this.toppings = toppings
 }
 
-
+//create a new Pizza!
+var chosenPizza = new Pizza("", []);
 
 //front-end logic
 $(document).ready(function() {
-  //create chosenPizza instance
-  var chosenPizza = new Pizza("", []);
 
   //choose size, add to chosenPizza
   $("form#size-selection").submit(function(event) {
@@ -25,11 +24,14 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").each(function() {
       chosenPizza.toppings.push($(this).val());
     });
-    console.log(chosenPizza.toppings);
+
+    //hide toppings, bring up results page
     $("#toppings").hide();
     $("#results").show();
+
     //make toppings a string, separated by comma
-    chosenPizza.toppings.join(", ");
+    chosenPizza.toppings = chosenPizza.toppings.join(", ");
+    console.log(chosenPizza.toppings);
   });
 
 
