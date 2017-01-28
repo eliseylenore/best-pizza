@@ -15,6 +15,11 @@ General Styling
   display: inline-block;
 }
 
+h3, h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2em;
+}
+
 .spaceholder {
   height: 100px;
 }
