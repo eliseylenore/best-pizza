@@ -65,7 +65,7 @@ $(document).ready(function() {
     //delete button click, still not sure why we need off()
     $(".btn-delete").off().click(function() {
       $(this).parent().remove();
-      totalPrice -= parseFloat($(this).prev().children('span').text());
+      totalPrice -= parseFloat($(this).prev().children('span').text()).toFixed(2);
       $("#total-price").text("Total price: $" + totalPrice);
     });
     //end delete click
