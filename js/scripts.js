@@ -6,12 +6,12 @@ function Pizza(sizeChoice, toppings) {
 
 Pizza.prototype.price = function() {
   var price = 4;
+
   if (this.sizeChoice === "medium") {
   price += 1.99;
   } else if (this.sizeChoice === "large") {
   price += 2.99;
   }
-
 
   if (this.toppings.length >= 5) {
     price += 3.25;
@@ -24,8 +24,9 @@ Pizza.prototype.price = function() {
 
 //create a new Pizza!
 var chosenPizza = new Pizza("", []);
+
 //create prices array to access when calculate total price
-var totalPrice=0;
+var totalPrice = 0;
 
 //front-end logic
 $(document).ready(function() {
@@ -40,7 +41,8 @@ $(document).ready(function() {
     $("#sizes").hide();
     $("#toppings").show();
     }
-  });//end submission event for size selection
+  });
+  //end submission event for size selection
 
   //choose toppings, add to chosenPizza, calculate and show price
   $("form#toppings-selection").submit(function(event) {
@@ -48,7 +50,8 @@ $(document).ready(function() {
       chosenPizza.toppings = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
       chosenPizza.toppings.push($(this).val());
-    });//end .each loop for checked toppings
+    });
+    //end .each loop for checked toppings
 
     //hide toppings, bring up results page
     $("#toppings").hide();
@@ -59,6 +62,7 @@ $(document).ready(function() {
 
     //show size and toppings on results page
     $("#results").append("<li><p>A <strong>" + chosenPizza.sizeChoice + "</strong> pizza</h3>" + "<p>with <strong>"+ chosenPizza.toppings.join(", ") + "</strong>.</p>" + "<p>Your price: $<span class='individual-price'><strong>" + chosenPizza.price() + "</strong></span></p>" + "<button class='btn btn-delete btn-warning btn-sm'>X</button></li>");
+
     //show total price on results page
     $("#total-price").text("Total price: $" + totalPrice);
 
@@ -71,12 +75,15 @@ $(document).ready(function() {
     //end delete click
 
 
-  });//end submission event for toppings selection
+  });
+  //end submission event for toppings selection
 
   //click for another pizza
   $(".add-pizza-btn").click(function() {
     $("#results-container, .add-pizza-btn").hide();
     $("#sizes").show();
-  });//end click function for pizza button
+  });
+  //end click function for pizza button
 
-});//end document ready
+});
+//end document ready
